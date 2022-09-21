@@ -1,7 +1,7 @@
  This is a  TEST TASK for the BLOCKCHAIN DEVELOPER POSITION.
 ##### [Click to see verified Ropstam Token Contract on Rinkeby Testnet](https://rinkeby.etherscan.io/address/0x24eC24453E4d0A774122b8403370D46A0bE26546#code)
 
-##### [Click to see verified NFT Contract on Rinkeby Testnet](https://rinkeby.etherscan.io/address/0xac9216b2e81b4b5d1aaf999d6ff63673571e90f2#code)
+##### [Click to see verified NFT Contract on Rinkeby Testnet](https://rinkeby.etherscan.io/address/0x858dc22b197c0397301549487a9b4312ce709728#code)
 Repository consists of two main contracts 
 > First is created a simple standard deflationary erc20 smart token named Ropstam,The user can buy the Ropstam token at a price of 100 wei.
 > Second is created a contract which contains two tokens, fungible token with name Hammer and non-fungible with name OpenApes.
