@@ -6,7 +6,6 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
 
 contract NFTContract is ERC1155 {
-
     // initializations
     uint256 public constant hammer = 0;
     uint256 public Open_Apes = 1;
@@ -22,11 +21,13 @@ contract NFTContract is ERC1155 {
         Ropstam = _RopstamToken;
         owner = msg.sender;
     }
+
     // Modifier
     modifier onlyOwner() {
         require(owner == msg.sender, "No sufficient right");
         _;
     }
+
     // sets new owner
     function setOwner(address _newOwner) external onlyOwner {
         owner = _newOwner;
@@ -34,7 +35,7 @@ contract NFTContract is ERC1155 {
 
     // Minting Functions
     function mintHammer(uint256 _amount) public {
-         // it will revert if msg.sender owns Open Apes token
+        // it will revert if msg.sender owns Open Apes token
         require(
             openApesAddresses[msg.sender] == false,
             "You cannot own Hammer"
@@ -60,5 +61,21 @@ contract NFTContract is ERC1155 {
         // Transfers Ropstam balance from contrac to owner
         uint256 contractBalance = Ropstam.balanceOf(address(this));
         Ropstam.transfer(owner, contractBalance);
+    }
+
+    function uri(uint256 _tokenid)
+        public
+        pure
+        override
+        returns (string memory)
+    {
+        return
+            string(
+                abi.encodePacked(
+                    "https://gateway.pinata.cloud/ipfs/QmZSYC5skyo5PZND8CguiL8tXPTsDj4Bsk79JE54WwpQKE/",
+                    Strings.toString(_tokenid),
+                    ".json"
+                )
+            );
     }
 }
